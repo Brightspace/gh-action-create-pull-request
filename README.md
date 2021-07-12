@@ -19,8 +19,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          commit-message-prefix: fix          # defaults 'chore'
-          git-user-email: myemail@example.com # defaults to '41898282+github-actions[bot]@users.noreply.github.com'
-          git-user-name: Test                 # defaults to 'github-actions[bot]'
-          pull-request-labels: test
+          commit-message-prefix: fix              # defaults 'chore'
+          git-user-email: myemail@example.com     # defaults to '41898282+github-actions[bot]@users.noreply.github.com'
+          git-user-name: Test                     # defaults to 'github-actions[bot]'
+          pull-request-labels: test               # defaults to 'changes'
+          pull-request-title: Update HTML Editor  # defaults to 'update deps'
 ```
