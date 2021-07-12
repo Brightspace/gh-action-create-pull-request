@@ -16,6 +16,9 @@ inputs:
   pull-request-labels:
     description: Comma-delimited labels to apply to the pull request.
     default: changes
+  pull-request-title:
+    description: The title for the pull request.
+    default: update deps
 runs:
   using: docker
   image: Dockerfile
@@ -24,3 +27,4 @@ runs:
     - ${{ inputs.git-user-email }}
     - ${{ inputs.pull-request-labels }}
     - ${{ inputs.commit-message-prefix }}
+    - ${{ inputs.pull-request-title }}

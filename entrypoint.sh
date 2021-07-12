@@ -5,6 +5,7 @@ GIT_USER_NAME=${1}
 GIT_USER_EMAIL=${2}
 PULL_REQUEST_LABELS=${3}
 COMMIT_MSG_PREFIX=${4}
+PULL_REQUEST_TITLE=${5}
 
 if $(git diff-index --quiet HEAD); then
   echo 'No dependencies needed to be updated!'
@@ -14,7 +15,7 @@ fi
 RUN_LABEL="${GITHUB_WORKFLOW}@${GITHUB_RUN_NUMBER}"
 RUN_ENDPOINT="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
 
-COMMIT_MSG="${COMMIT_MSG_PREFIX}: update deps ($(date -I))"
+COMMIT_MSG="${COMMIT_MSG_PREFIX}: ${PULL_REQUEST_TITLE} ($(date -I))"
 PR_BRANCH=chore/deps-$(date +%s)
 
 git config user.name ${GIT_USER_NAME}
