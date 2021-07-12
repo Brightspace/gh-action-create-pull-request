@@ -1,0 +1,26 @@
+name: Push Git Changes
+branding:
+  icon: package
+  color: green
+description: Pushes any changes made to a git branch.
+inputs:
+  commit-message-prefix:
+    description: Prefix to use for commit messages.
+    default: chore
+  git-user-email:
+    description: Git user.email to use for the commit.
+    default: 41898282+github-actions[bot]@users.noreply.github.com
+  git-user-name:
+    description: Git user.name to use for the commit.
+    default: github-actions[bot]
+  pull-request-labels:
+    description: Comma-delimited labels to apply to the pull request.
+    default: changes
+runs:
+  using: docker
+  image: Dockerfile
+  args:
+    - ${{ inputs.git-user-name }}
+    - ${{ inputs.git-user-email }}
+    - ${{ inputs.pull-request-labels }}
+    - ${{ inputs.commit-message-prefix }}
