@@ -25,3 +25,6 @@ jobs:
           pull-request-labels: test               # defaults to 'changes'
           pull-request-title: Update HTML Editor  # defaults to 'update deps'
 ```
+
+## Attribution
+Original [source code](https://github.com/neverendingqs/gh-action-node-update-deps)
